@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
     this.http.get(environment.url + 'products').subscribe((data: any) => {
       data.filter((item: ItemModel) => {
         if (item.category == this.category && item.id == this.id) {
-          item.imageURL = 'http://localhost:4400/assets' + item.imageURL;
+          item.imageURL = environment.frontendUrl + item.imageURL;
           item.selectedItemQty = 1;
           item.totalPrice = item.price;
           this.totalBill = this.totalBill + item.price;
