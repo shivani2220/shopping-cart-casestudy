@@ -1,0 +1,21 @@
+$color-container-item: #787878;
+$color-border: #d2d2d2;
+$background-color:#eaeaea;
+
+.left-menu-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 40%;
+    max-height: 100%;
+    background-color: $background-color;
+  }
+  
+  .left-menu-container > div {
+    width: 158px;
+    margin: 13px;
+    font-size: 16px;
+    color: $color-container-item;
+    border-bottom: 1px solid $color-border;
+    padding: 0px 0px 12px 0px;
+    cursor: pointer;
+  }

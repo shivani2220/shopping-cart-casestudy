@@ -1,0 +1,35 @@
+<div  class="cart-main-conatiner">
+    <div class="d-flex justifySpaceBetween main_header">
+        <div>My Cart</div>
+        <div (click)="onClosePopUp()" class="cursor-pt">X</div>
+    </div>
+    <div class="col-12 item_container">
+        <div class="d-flex justifySpaceBetween" *ngFor="let selectedItem of selectedItemList">
+            <div  class="d-flex justifyContent-flex-st">
+                <img src="{{selectedItem.imageURL}}">
+                <span class="main">
+                    <span>{{selectedItem.name}}</span>
+                    <div class="specs">
+                        <span class="icon"> - </span>
+                        <span  class="margin-one">{{selectedItem.selectedItemQty}}</span>
+                        <span class="icon" (click)="increaseItemQty(selectedItem)"> + </span>
+                        <span  class="margin-mul">*</span>
+                        <span class="amount"> Rs.{{selectedItem.price}}</span>
+                    </div>
+                </span>
+            </div>
+            <div class="total_amount">Rs.{{selectedItem.totalPrice}}</div>
+        </div>
+    </div>
+    <div class="col-12 guarantee_contianer">
+        <img src="../../assets/image/lowest-price.png">
+        <div class="text">You won't find it cheaper anywhere</div>
+    </div>
+    <div class="col-12 promo-code-panel d-flex justifyCenter d-flex-dir-col align_center">
+        <div class="promo-code">Promo code can be applied on payment page</div>
+        <div class="d-flex justifySpaceBetween w100 proceed-checkout">
+            <div  class="proceed-checkout-mg">Proceed to Checkout</div>
+            <div  class="proceed-checkout-amt">Rs.{{totalBill}}<span class="arrow"> ></span></div>
+        </div>
+    </div>
+</div>

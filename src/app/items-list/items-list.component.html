@@ -1,0 +1,24 @@
+<div style="position: relative;">
+    <div class="row m0">
+        <div class="col-item-layout" *ngFor="let item of itemList; let i = index">
+            <div class="item-name"> {{item.name}}</div>
+            <div class="item-container">
+                <div class="item-flex-container">
+                    <div class="item-container-body">
+                        <img src="{{item.imageURL}}" class="item-img">
+                        <span class="item-quantity">3 pc(270g-300g)</span>
+                    </div>
+                    <div style="    height: 64px;
+                margin-bottom: 15px;    overflow: auto;">{{item.description}}</div>
+                </div>
+                <div class="item-price-flex-container">
+                    <div style="background-color: #bf2957" (click)="addtoCart(item)">Buy Now @Rs.{{item.price}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" *ngIf="showCart">
+        <app-cart (onClose)="onClose()" [id]="selectedId" [category]="selectedCategory"></app-cart>
+    </div>
+</div>
