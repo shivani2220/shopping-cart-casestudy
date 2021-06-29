@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
         return a.order - b.order;
       })
       this.categoriesList.filter((category: CategoryModel) => {
-        category.imageUrl = 'http://localhost:4400/assets' + category.imageUrl;
+        category.imageUrl = environment.frontendUrl + category.imageUrl;
+        
       });
 
     });
